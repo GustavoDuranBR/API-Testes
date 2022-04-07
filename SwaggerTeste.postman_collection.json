@@ -1,0 +1,893 @@
+{
+	"info": {
+		"_postman_id": "8857eee8-ca48-47ce-969a-551f5937884b",
+		"name": "Swagger Webmotors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Online Challenge",
+					"item": [
+						{
+							"name": "API para recuperar marcas cadastradas na webmotors",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response Code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Cache-Control Pass\", function () {\r",
+											"    pm.response.to.have.header(\"Cache-Control\", \"no-cache\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Cache-Control No Pass\", function () {\r",
+											"    pm.response.to.have.header(\"Cache-Control\", \"yes-cache\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/OnlineChallenge/Make",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"OnlineChallenge",
+										"Make"
+									]
+								},
+								"description": "JSON retorno para leitura"
+							},
+							"response": [
+								{
+									"name": "HTTP OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/OnlineChallenge/Make",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"OnlineChallenge",
+												"Make"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Email\": \"nulla et anim irure\",\n  \"Password\": \"et ullamco Excepteur\",\n  \"ConfirmPassword\": \"esse veniam\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/OnlineChallenge/Make",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"OnlineChallenge",
+												"Make"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "API para recuperar modelos cadastradas na webmotors",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Response Code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response Code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 200ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is more than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.above(500);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/OnlineChallenge/Model?MakeID=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"OnlineChallenge",
+										"Model"
+									],
+									"query": [
+										{
+											"key": "MakeID",
+											"value": "",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "JSON retorno para leitura"
+							},
+							"response": [
+								{
+									"name": "HTTP OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/OnlineChallenge/Model?MakeID=13722444",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"OnlineChallenge",
+												"Model"
+											],
+											"query": [
+												{
+													"key": "MakeID",
+													"value": "13722444"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Email\": \"nulla et anim irure\",\n  \"Password\": \"et ullamco Excepteur\",\n  \"ConfirmPassword\": \"esse veniam\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/OnlineChallenge/Model?MakeID=13722444",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"OnlineChallenge",
+												"Model"
+											],
+											"query": [
+												{
+													"key": "MakeID",
+													"value": "13722444"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "API para recuperar versões cadastradas na webmotors",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/OnlineChallenge/Version?ModelID={{value1}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"OnlineChallenge",
+										"Version"
+									],
+									"query": [
+										{
+											"key": "ModelID",
+											"value": "{{value1}}"
+										}
+									]
+								},
+								"description": "JSON retorno para leitura"
+							},
+							"response": [
+								{
+									"name": "HTTP OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/OnlineChallenge/Version?ModelID=13722444",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"OnlineChallenge",
+												"Version"
+											],
+											"query": [
+												{
+													"key": "ModelID",
+													"value": "13722444"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Email\": \"nulla et anim irure\",\n  \"Password\": \"et ullamco Excepteur\",\n  \"ConfirmPassword\": \"esse veniam\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/OnlineChallenge/Version?ModelID=13722444",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"OnlineChallenge",
+												"Version"
+											],
+											"query": [
+												{
+													"key": "ModelID",
+													"value": "13722444"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "API para recuperar versões cadastradas na webmotors",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/OnlineChallenge/Vehicles?Page=13722444",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"OnlineChallenge",
+										"Vehicles"
+									],
+									"query": [
+										{
+											"key": "Page",
+											"value": "13722444",
+											"description": "(Required) Codigo do Modelo"
+										}
+									]
+								},
+								"description": "JSON retorno para leitura"
+							},
+							"response": [
+								{
+									"name": "HTTP OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/OnlineChallenge/Vehicles?Page=13722444",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"OnlineChallenge",
+												"Vehicles"
+											],
+											"query": [
+												{
+													"key": "Page",
+													"value": "13722444"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Email\": \"nulla et anim irure\",\n  \"Password\": \"et ullamco Excepteur\",\n  \"ConfirmPassword\": \"esse veniam\"\n}"
+								},
+								{
+									"name": "Internal Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/OnlineChallenge/Vehicles?Page=13722444",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"OnlineChallenge",
+												"Vehicles"
+											],
+											"query": [
+												{
+													"key": "Page",
+													"value": "13722444"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Values",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Values Get",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Values/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Values",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "13722444",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Values/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Values",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "13722444",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "\"esse minim\""
+										}
+									]
+								},
+								{
+									"name": "Values Put",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "0",
+													"value": "e"
+												},
+												{
+													"key": "1",
+													"value": "s"
+												},
+												{
+													"key": "2",
+													"value": "s"
+												},
+												{
+													"key": "3",
+													"value": "e"
+												},
+												{
+													"key": "4",
+													"value": " "
+												},
+												{
+													"key": "5",
+													"value": "m"
+												},
+												{
+													"key": "6",
+													"value": "i"
+												},
+												{
+													"key": "7",
+													"value": "n"
+												},
+												{
+													"key": "8",
+													"value": "i"
+												},
+												{
+													"key": "9",
+													"value": "m"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Values/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Values",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "13722444",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "No Content",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Values/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Values",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "13722444",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Values Delete",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Values/:id?id=1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Values",
+												":id"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "1"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "No Content",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Values/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Values",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "13722444",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Values Get",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Values",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Values"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Values",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Values"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  \"sed eu qui\",\n  \"minim\"\n]"
+								}
+							]
+						},
+						{
+							"name": "Values Post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "0",
+											"value": "e"
+										},
+										{
+											"key": "1",
+											"value": "s"
+										},
+										{
+											"key": "2",
+											"value": "s"
+										},
+										{
+											"key": "3",
+											"value": "e"
+										},
+										{
+											"key": "4",
+											"value": " "
+										},
+										{
+											"key": "5",
+											"value": "m"
+										},
+										{
+											"key": "6",
+											"value": "i"
+										},
+										{
+											"key": "7",
+											"value": "n"
+										},
+										{
+											"key": "8",
+											"value": "i"
+										},
+										{
+											"key": "9",
+											"value": "m"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Values",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Values"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Values",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Values"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://desafioonline.webmotors.com.br",
+			"type": "string"
+		}
+	]
+}
